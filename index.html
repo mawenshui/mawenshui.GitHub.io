@@ -2,125 +2,89 @@
 <html lang="en">
 <head>
 	
-	
-	
-	
 <script>//禁止右键
-
-  function click(e) {
-
-    if (document.all) {
-
-      if (event.button == 2 || event.button == 3) {
+  function click(e) 
+{
+    if (document.all) 
+    {
+      if (event.button == 2 || event.button == 3) 
+      {
         alert("欢迎使用jixiang的小窝视频解析");
-
         oncontextmenu = 'return false';
-
       }
-
     }
 
-    if (document.layers) {
-
-      if (e.which == 3) {
-
+    if (document.layers) 
+    {
+      if (e.which == 3) 
+      {
         oncontextmenu = 'return false';
-
       }
-
     }
-
   }
 
-  if (document.layers) {
-
+  if (document.layers) 
+  {
     document.captureEvents(Event.MOUSEDOWN);
-
   }
 
   document.onmousedown = click;
-
   document.oncontextmenu = new Function("return false;")
-
-  document.onkeydown = document.onkeyup = document.onkeypress = function() {
-
-    if (window.event.keyCode == 12) {
-
+  document.onkeydown = document.onkeyup = document.onkeypress = function() 
+  {
+    if (window.event.keyCode == 12) 
+    {
       window.event.returnValue = false;
-
       return (false);
-
     }
-
 }</script>
   
+	
 <script>//禁止F12
 
-  function fuckyou() {
-
+  function fuckyou() 
+  {
     window.close(); //关闭当前窗口(防抽)
-
     window.location = "about:blank"; //将当前窗口跳转置空白页
-
   }
 
-  function click(e) {
-
-    if (document.all) {
-
-      if (event.button == 2 || event.button == 3) {
-
+  function click(e) 
+  {
+    if (document.all) 
+    {
+      if (event.button == 2 || event.button == 3) 
+      {
         alert("欢迎使用jixiang的小窝视频解析");
-
         oncontextmenu = 'return false';
-
       }
-
     }
 
-    if (document.layers) {
-
-      if (e.which == 3) {
-
+    if (document.layers) 
+    {
+      if (e.which == 3) 
+      {
         oncontextmenu = 'return false';
-
       }
-
     }
-
   }
 
-  if (document.layers) {
-
+  if (document.layers) 
+  {
     fuckyou();
-
     document.captureEvents(Event.MOUSEDOWN);
-
   }
 
   document.onmousedown = click;
-
   document.oncontextmenu = new Function("return false;")
-
   document.onkeydown = document.onkeyup = document.onkeypress = function() {
 
-    if (window.event.keyCode == 123) {
-
+    if (window.event.keyCode == 123) 
+    {
       fuckyou();
-
       window.event.returnValue = false;
-
       return (false);
-
     }
-
 }</script>
-	
-	
-	
-	
-	
-	
 	
 	
     <meta charset="UTF-8" />
@@ -209,6 +173,12 @@
 			<option rel="nofollow" value="https://okjx.cc/?url=">OK解析接口</option>
 			<option rel="nofollow" value="https://api.v6.chat/?url=">音萌解析接口</option>
 			<option rel="nofollow" value="https://jx.908la.com/api/?key=b63hpZzgMlhu5gAoQe&url=">908解析接口</option>
+			
+			<option rel="nofollow" value="https://jsap.attakids.com/?url=">数码小站接口①</option>
+			<option rel="nofollow" value="https://j.zz22x.com/jx/?url=">数码小站接口②</option>
+			<option rel="nofollow" value="http://www.ikukk.com/?url=">数码小站接口③</option>
+			
+			
 			<option rel="nofollow" value="http://jf.lemiaoyun.cn/home/api?type=ys&uid=397363&key=fghnstvwAENRS04789&url=">乐喵解析接口</option>
 			<option rel="nofollow" value="http://xxt.gbxy.net.cn/home/api?type=hezi&uid=613844&key=bdeghijlmzDQTUXY45&url=">椰子解析接口</option>
 			<option rel="nofollow" value="https://www.pangujiexi.com/jiexi/?url=">盘古解析接口</option>
@@ -247,9 +217,35 @@
             <br />
             <div>
                 <button id="bf" type="button" class="btn btn-success btn-lg btn-block" onclick="dihejk()">开始播放</button>
-		<button id="bf" type="button" class="btn btn-success btn-lg btn-block" onclick="dihejk()">
-			<a href="https://xydh.fun/mawenshui">更多精彩内容</a>
-		</button>
+
+		    
+		    
+		<div class="table-bordered">
+			<table class="table-bordered">
+			<thead>
+				<tr><th>
+					<div class="row">
+						<div class="gongzhonghao">
+							<div class="image">
+							<a href="http://weixin.qq.com/r/ij8WDt-EDIJzrZtt92qY">jixiang的公众号</a>
+							<img class="img-responsive" src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7.jpg">
+							</div>
+						</div>
+						
+						<div class="daohangye">
+							<div class="image">
+							<a href="https://xydh.fun/mawenshui">jixiang的导航站</a>
+							<img class="img-responsive" src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%AF%BC%E8%88%AA%E7%AB%99_1000px.png">
+							</div>
+						</div>
+					</div>
+				</th>
+				</tr>
+		</div>
+
+				
+				
+				
             </div>
         </form>
     </div>
