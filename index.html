@@ -2,112 +2,28 @@
 <html lang="en">
 <head>
 
-<script>//禁止右键
-  function click(e) 
-{
-    if (document.all) 
-    {
-      if (event.button == 2 || event.button == 3) 
-      {
-        alert("欢迎使用jixiang的视频解析");
-        oncontextmenu = 'return false';
-      }
-    }
 
-    if (document.layers) 
-    {
-      if (e.which == 3) 
-      {
-        oncontextmenu = 'return false';
-      }
-    }
-  }
-
-  if (document.layers) 
-  {
-    document.captureEvents(Event.MOUSEDOWN);
-  }
-
-  document.onmousedown = click;
-  document.oncontextmenu = new Function("return false;")
-  document.onkeydown = document.onkeyup = document.onkeypress = function() 
-  {
-    if (window.event.keyCode == 12) 
-    {
-      window.event.returnValue = false;
-      return (false);
-    }
-}</script>
-  
-	
-<script>//禁止F12
-
-  function fuckyou() 
-  {
-    window.close(); //关闭当前窗口(防抽)
-    window.location = "about:blank"; //将当前窗口跳转置空白页
-  }
-
-  function click(e) 
-  {
-    if (document.all) 
-    {
-      if (event.button == 2 || event.button == 3) 
-      {
-        alert("欢迎使用jixiang的视频解析");
-        oncontextmenu = 'return false';
-      }
-    }
-
-    if (document.layers) 
-    {
-      if (e.which == 3) 
-      {
-        oncontextmenu = 'return false';
-      }
-    }
-  }
-
-  if (document.layers) 
-  {
-    fuckyou();
-    document.captureEvents(Event.MOUSEDOWN);
-  }
-
-  document.onmousedown = click;
-  document.oncontextmenu = new Function("return false;")
-  document.onkeydown = document.onkeyup = document.onkeypress = function() {
-
-    if (window.event.keyCode == 123) 
-    {
-      fuckyou();
-      window.event.returnValue = false;
-      return (false);
-    }
-}</script>
-	
-	
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jixiang的视频解析</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <style>
-		/* 播放器CSS */
+		//播放器CSS
 		#player
 		{
 		    width:60%;
 		    background-color:black;
-		}
+		};
 	    
 		//标题栏
-	    	headline
+	    .headline
 		{
 			margin:0px auto;
 			text-align:center;
 		    width:60%;
 		    background-color:rgb(248, 0, 255);
 		    color:rgb(91, 239, 255);
-	    	}
+	    };
     </style>
 	
 	
@@ -138,7 +54,7 @@
 <br />
 
 	
-<div style="padding-top:0px;">
+<div class="headline" style="padding-top:0px;">
 	<div class="headline" role="alert">
 		<div class="headline">
 			<font size="20">jixiang的视频解析</font><br>
