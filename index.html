@@ -92,41 +92,23 @@
     <title>jixiang的视频解析</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <style>
+		/* 播放器CSS */
+		#player
+		{
+		    background-color:rgb(248, 0, 255);
+		}
 	    
-	/* 看板娘CSS */
-	#live2dcanvas 
-	{
-	    border: 0 !important;
-	}
-	
-	/* 播放器CSS */
-        #player
-        {
-            background-color: black;
-        }
-
+		//标题栏
+	    	headline
+		{
+		    background-color:rgb(248, 0, 255);
+		    color:rgb(91, 239, 255);
+	    	}
     </style>
 	
 	
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8"  src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	<!-- 2D看板娘 -->
-	<script type="text/javascript">
-	    L2Dwidget.init({"display": 
-		{
-		"superSample": 2,
-		"width": 200,
-		"height": 400,
-		"position": "right",
-		"hOffset": 0,
-		"vOffset": 0
-		 }
-	     });
-	</script>
-	
     <script type = "text/javascript" > eval(function(p, a, c, k, e, d) {
     e = function(c) {
     return (c < a ? "": e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
@@ -152,7 +134,7 @@
 <br />
 
 	
-<div class="container" style="padding-top:0px;">
+<div class="headline" style="padding-top:0px;">
 	<div class="alert alert-success alert-dismissible" role="alert">
 		<div class="row text-center">
 			<font size="20">jixiang的视频解析</font><br>
@@ -162,7 +144,7 @@
 </div>
 		
 		
-<div class="container" style="padding-top:0px;" id="wbk">
+<div class="headline" style="padding-top:0px;" id="wbk">
     <div class="alert alert-success alert-dismissible" role="alert">
 	<div class="row text-center">
 		<button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
