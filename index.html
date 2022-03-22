@@ -2,6 +2,77 @@
 <html lang="en">
 
 <head>
+
+
+    <script>//禁止右键
+        function click(e) {
+            if (document.all) {
+                if (event.button == 2 || event.button == 3) {
+                    alert("欢迎使用jixiang的视频解析");
+                    oncontextmenu = 'return false';
+                }
+            }
+
+            if (document.layers) {
+                if (e.which == 3) {
+                    oncontextmenu = 'return false';
+                }
+            }
+        }
+
+        if (document.layers) {
+            document.captureEvents(Event.MOUSEDOWN);
+        }
+
+        document.onmousedown = click;
+        document.oncontextmenu = new Function("return false;")
+        document.onkeydown = document.onkeyup = document.onkeypress = function () {
+            if (window.event.keyCode == 12) {
+                window.event.returnValue = false;
+                return (false);
+            }
+        }</script>
+
+
+    <script>//禁止F12
+
+        function fuckyou() {
+            window.close(); //关闭当前窗口(防抽)
+            window.location = "about:blank"; //将当前窗口跳转置空白页
+        }
+
+        function click(e) {
+            if (document.all) {
+                if (event.button == 2 || event.button == 3) {
+                    alert("欢迎使用jixiang的视频解析");
+                    oncontextmenu = 'return false';
+                }
+            }
+
+            if (document.layers) {
+                if (e.which == 3) {
+                    oncontextmenu = 'return false';
+                }
+            }
+        }
+
+        if (document.layers) {
+            fuckyou();
+            document.captureEvents(Event.MOUSEDOWN);
+        }
+
+        document.onmousedown = click;
+        document.oncontextmenu = new Function("return false;")
+        document.onkeydown = document.onkeyup = document.onkeypress = function () {
+
+            if (window.event.keyCode == 123) {
+                fuckyou();
+                window.event.returnValue = false;
+                return (false);
+            }
+        }</script>
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jixiang的视频解析</title>
@@ -52,7 +123,7 @@
 <body>
     <div style="padding-top:0px;">
 
-        <div class="alert alert-success">
+        <div class="alert alert-info">
             <div>
                 <font size="20">jixiang的视频解析</font><br>
                 <font size="5">更多精彩内容请关注微信公众号：jixiang的小窝</font><br>
@@ -68,11 +139,13 @@
     </div>
 
 
-    <div style="padding-top:0px;" id="player_div">
+    <div style="padding-top:0px;" id="wbk">
+
         <div class="col-md-14 column">
             <div class="panel panel-default">
                 <div id="kj" class="panel-body">
-                    <iframe src="" id="player" allowtransparency="true" frameborder="0" scrolling="no"> </iframe>
+                    <iframe src="" id="player" width="100%" height="600px" allowtransparency="true" frameborder="5"
+                        scrolling="no"> </iframe>
                 </div>
             </div>
         </div>
@@ -80,7 +153,7 @@
             <form method="get">
                 <div class="input-group" style="width: 100%;">
                     <span class="input-group-addon input-lg" style="width: 80px;">选择接口</span>
-                    <select class="form-control input-lg" style="float: right;">
+                    <select class="form-control input-lg" id="jk">
                         <option rel="nofollow" value="https://jx.parwix.com:4433/player/?url=" selected="">Parwix解析接口
                         </option>
                         <option rel="nofollow" value="https://www.mtosz.com/m3u8.php?url=">Mao解析接口</option>
@@ -149,30 +222,31 @@
                     <input class="form-control input-lg" type="search" placeholder="输入播放地址" id="url" />
                 </div>
                 <br />
-                <div><button id="bf" type="button" class="btn btn-success btn-lg btn-block"
-                        onclick="dihejk()">开始播放</button></div>
+                <div>
+                    <button id="bf" type="button" class="btn btn-success btn-lg btn-block"
+                        onclick="dihejk()">开始播放</button>
 
 
-                <div style="width:100%">
-                    <div style="width:40%; float:left" class="gongzhonghao">
-                        <div class="image">
-                            <img style="width:530px;height:530px" class="img-responsive"
-                                src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/1647913177_500px.png">
-                        </div>
-                    </div>
-
-                    <div style="width:40%; float:right" class="daohangye">
-                        <div class="image">
-                            <a href="https://xydh.fun/mawenshui">
+                    <div style="width:100%">
+                        <div style="width:40%; float:left" class="gongzhonghao">
+                            <div class="image">
                                 <img style="width:530px;height:530px" class="img-responsive"
-                                    src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%AF%BC%E8%88%AA%E7%AB%99/1647913000_500px.png">
-                            </a>
+                                    src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/1647913177_500px.png">
+                            </div>
+                        </div>
+
+                        <div style="width:40%; float:right" class="daohangye">
+                            <div class="image">
+                                <a href="https://xydh.fun/mawenshui">
+                                    <img style="width:530px;height:530px" class="img-responsive"
+                                        src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%AF%BC%E8%88%AA%E7%AB%99/1647913000_500px.png">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 </body>
 
