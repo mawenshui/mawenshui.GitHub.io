@@ -1,39 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jixiang的视频解析</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-		//播放器CSS
-		.player
-		{
-		    width:60%;
-		    background-color:black;
-		};
-		
-		#player_div
-		{
-			width:60%;
-			margin:0px auto;
-		}
-	    
-		//标题栏
-	    .headline
-		{
-			margin:0px auto;
-			text-align:center;
-		    width:60%;
-		    background-color:rgb(248, 0, 255);
-		    color:rgb(91, 239, 255);
-	    };
-    </style>
-	
-	
-    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type = "text/javascript" > eval(function(p, a, c, k, e, d) {
     e = function(c) {
@@ -53,44 +28,68 @@
     return p
     } ('b a(){0 6=1.2("9").4;0 5=1.2("3");0 3=1.2("3").c;0 8=5.e[3].4;0 7=1.2("f");7.d=8+6}', 16, 16, 'var|document|getElementById|jk|value|jkurl|diz|cljurl|jkv|url|dihejk|function|selectedIndex|src|options|player'.split('|'), 0, {}))
     </script>
+
+    <style>
+		body
+		{
+			width: 60%;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			background-image: url(https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc0lMWU9pZXhyVUFqRU5CTUNkanB0UnZhZlFY.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+		};
+
+		#player_div
+		{
+			background-color: black;
+		};
+
+		#player
+		{
+		    background-color: black;
+			width:100%; 
+			height:600px;
+		};
+		
+    </style>
 </head>
 	
 	
-<body background="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc0lMWU9pZXhyVUFqRU5CTUNkanB0UnZhZlFY.jpg" style="background-repeat:no-repeat; background-size:100% 100%;background-attachment: fixed;>
-<br />
+<body>
+<div style="padding-top:0px;">
 
-	
-<div class="headline" style="padding-top:0px;">
-	<div class="headline" role="alert">
-		<div class="headline">
+	<div class="alert alert-success">
+		<div>
 			<font size="20">jixiang的视频解析</font><br>
 			<font size="5">更多精彩内容请关注微信公众号：jixiang的小窝</font><br>
 		</div>
 	</div>
 	
-	<div class="alert alert-success alert-dismissible" role="alert">
-		<div class="row text-center">
-			<button type="button" class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-			<font size="5">将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可<br></br>如遇无法播放，请切换线路并再次点击播放按钮<br></br></font>
-			<font size="5">本站所用接口均来源于网络，如有侵权请联系删除</font>
-		</div>
-    </div>
+	<div class="alert alert-info alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<font size="5">将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可<br></br>如遇无法播放，请切换线路并再次点击播放按钮<br></br></font>
+		<font size="5">本站所用接口均来源于网络，如有侵权请联系删除</font>
+	</div>
+
 </div>
 		
 		
-<div class="player" style="padding-top:0px;" id="player_div">
+<div style="padding-top:0px;" id="player_div">
     <div class="col-md-14 column">
         <div class="panel panel-default">
             <div id="kj" class="panel-body">
-                <iframe src="" id="player" width="100%" height="600px" allowtransparency="true" frameborder="0" scrolling="no"> </iframe>
+                <iframe src="" id="player" allowtransparency="true" frameborder="0" scrolling="no"> </iframe>
             </div>
         </div>
     </div>
     <div class="col-md-14 column">
         <form method="get">
             <div class="input-group" style="width: 100%;">
-                <span class="input-group-addon input-lg" style="width: 80px; ">选择接口</span>
-                <select class="form-control input-lg" id="jk">
+                <span class="input-group-addon input-lg" style="width: 80px;">选择接口</span>
+                <select class="form-control input-lg" style="float: right;">
 			<option rel="nofollow" value="https://jx.parwix.com:4433/player/?url=" selected="">Parwix解析接口</option>
 			<option rel="nofollow" value="https://www.mtosz.com/m3u8.php?url=">Mao解析接口</option>
 			<option rel="nofollow" value="https://vip.bljiex.com/?v=">BL解析接口</option>
@@ -153,8 +152,7 @@
                 <input class="form-control input-lg" type="search" placeholder="输入播放地址" id="url" />
             </div>
             <br />
-            <div>
-                <button id="bf" type="button" class="btn btn-success btn-lg btn-block" onclick="dihejk()">开始播放</button>
+            <div><button id="bf" type="button" class="btn btn-success btn-lg btn-block" onclick="dihejk()">开始播放</button></div>
 		
 		    
 		<div style="width:100%">
@@ -178,6 +176,5 @@
         </form>
     </div>
 </div>
-<br />
 </body>
 </html>
