@@ -20,28 +20,28 @@
     } 
 </script> -->
 
-<!-- 已运行时间显示 -->
-<script type="text/javascript">
-    function show_runtime() {
-        window.setTimeout("show_runtime()", 1000);
-        X = new Date("02/15/2022 07:38:15");
-        Y = new Date(); 
-        T = (Y.getTime() - X.getTime()); 
-        M = 24 * 60 * 60 * 1000;
-        a = T / M;
-        A = Math.floor(a);
-        b = (a - A) * 24; 
-        B = Math.floor(b);
-        c = (b - B) * 60; 
-        C = Math.floor((b - B) * 60);
-        D = Math.floor((c - C) * 60);
-        runtime_span.innerHTML = "本站勉强运行: " + A + "天" + B + "小时" + C + "分" + D + "秒"
-    }
-    show_runtime();
-</script>
+    <!-- 已运行时间显示 -->
+    <script type="text/javascript">
+        function show_runtime() {
+            window.setTimeout("show_runtime()", 1000);
+            X = new Date("02/15/2022 07:38:15");
+            Y = new Date();
+            T = (Y.getTime() - X.getTime());
+            M = 24 * 60 * 60 * 1000;
+            a = T / M;
+            A = Math.floor(a);
+            b = (a - A) * 24;
+            B = Math.floor(b);
+            c = (b - B) * 60;
+            C = Math.floor((b - B) * 60);
+            D = Math.floor((c - C) * 60);
+            runtime_span.innerHTML = "本站勉强运行: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+        }
+        show_runtime();
+    </script>
 
-
-    <script>//禁止右键
+    <!-- 禁止右键 -->
+    <script>
         function click(e) {
             if (document.all) {
                 if (event.button == 2 || event.button == 3) {
@@ -70,9 +70,8 @@
             }
         }</script>
 
-
-    <script>//禁止F12
-
+    <!-- 禁止F12 -->
+    <script>
         function fuckyou() {
             window.close(); //关闭当前窗口(防抽)
             window.location = "about:blank"; //将当前窗口跳转置空白页
@@ -115,8 +114,11 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes" />
     <title>jixiang的视频解析</title>
 
+    <!-- 2D看板娘依赖 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <!-- 看板娘自动加载 -->
+    <script src="https://cdn.jsdelivr.net/gh/mawenshui/live2d-widget@latest/autoload.js"></script>
+
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -145,8 +147,10 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
-            /* background-image: url(https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc0lMWU9pZXhyVUFqRU5CTUNkanB0UnZhZlFY.jpg); */ /* 固定图片背景 */
-            background-image: url(https://api.vvhan.com/api/acgimg);    /* 随机二次元图片接口 */
+            /* background-image: url(https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc0lMWU9pZXhyVUFqRU5CTUNkanB0UnZhZlFY.jpg); */
+            /* 固定图片背景 */
+            background-image: url(https://api.vvhan.com/api/acgimg);
+            /* 随机二次元图片接口 */
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-attachment: fixed;
@@ -156,10 +160,12 @@
             background-color: black;
         }
 
-        /* option{
-            filter: alpha(opacity=70); 
-            opacity: 0.7;
-        } */
+        span
+        {
+            background: linear-gradient(to right, red, blue);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
     </style>
 </head>
 
@@ -169,27 +175,25 @@
     <script src='https://api.vvhan.com/api/snow'></script>
 
     <div style="padding-top:0px;">
-        <div class="alert alert-info" style="filter: alpha(opacity=70); opacity:0.7;">
+        <div class="alert alert-info" style="background: transparent;border: 0px;">
             <div>
-                <font size="20">jixiang的视频解析</font><br>
-                <font size="5">一个人只能被他的情绪控制，那么他永远不会成功</font><br>
-                <span id="runtime_span"></span>
+                <font size="20"><span>jixiang的视频解析</span></font><br>
+                <font size="5"><span>一个人只能被他的情绪控制，那么他永远不会成功</span></font><br>
             </div>
         </div>
 
 
-        <div class="alert alert-info alert-dismissable" style="filter: alpha(opacity=70); opacity:0.7;">
+        <div class="alert alert-info alert-dismissable" style="background: transparent;border: 0px;">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <font size="5">将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可</font><br>
-            <font size="5">如遇无法播放，请切换线路并再次点击播放按钮</font><br>
-            <font size="5">本站所用接口均来源于网络，如有侵权请联系删除</font>
+            <font size="5"><span>将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可</span></font><br>
+            <font size="5"><span>如遇无法播放，请切换线路并再次点击播放按钮</span></font><br>
+            <font size="5"><span>本站所用接口均来源于网络，如有侵权请联系删除</span></font>
         </div>
 
     </div>
 
 
     <div style="padding-top:0px;" id="wbk">
-
         <div class="col-md-14 column">
 
             <div class="panel panel-default" style="filter: alpha(opacity=80); opacity:0.8;">
@@ -200,7 +204,7 @@
             </div>
 
         </div>
-        <div class="col-md-14 column" style="filter: alpha(opacity=70); opacity:0.7;">
+        <div class="col-md-14 column" style="filter: alpha(opacity=80); opacity:0.8;">
             <form method="get">
                 <div class="input-group" style="width: 100%;">
                     <span class="input-group-addon input-lg" style="width: 80px;">选择接口</span>
@@ -252,7 +256,6 @@
                         <option rel="nofollow" value="http://vip.26db.cn/a/?url=">cd解析——⑦号</option>
                         <option rel="nofollow" value="https://17kyun.com/jx.php?url=">cd解析——⑧号</option>
 
-
                     </select>
                 </div>
                 <br>
@@ -263,25 +266,10 @@
                 <br>
                 <div>
                     <button id="bf" type="button" class="btn btn-success btn-lg btn-block"
-                        onclick="dihejk()">开始播放</button>
+                        onclick="dihejk()">开始播放</button><br></br>
 
-
-                    <div style="width:100%">
-                        <div style="width:40%; float:left" class="gongzhonghao">
-                            <div class="image">
-                                <img style="width:530px;height:530px" class="img-responsive"
-                                    src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%85%AC%E4%BC%97%E5%8F%B7/1647913177_500px.png">
-                            </div>
-                        </div>
-
-                        <div style="width:40%; float:right" class="daohangye">
-                            <div class="image">
-                                <a href="https://xydh.fun/mawenshui">
-                                    <img style="width:530px;height:530px" class="img-responsive"
-                                        src="https://mawenshui.oss-cn-beijing.aliyuncs.com/img-BMP/jixiang%E7%9A%84%E5%AF%BC%E8%88%AA%E7%AB%99/1647913000_500px.png">
-                                </a>
-                            </div>
-                        </div>
+                    <div style="width: 100%;">
+                        <font size="5"><span id="runtime_span""></span></font>
                     </div>
                 </div>
             </form>
