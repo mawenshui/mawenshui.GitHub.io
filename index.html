@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-<!-- 跳转页面 -->
-<!-- <p style="text-indent: 2em; margin-top: 30px;">
+    <!-- 跳转页面 -->
+    <!-- <p style="text-indent: 2em; margin-top: 30px;">
 系统将在 <span id="time">5</span> 秒钟后自动跳转至新网址，如果未能跳转，<a href="https://vip.mawenshui.fun/HTML/null.html" title="点击访问">请点击</a>。</p>
 <script type="text/javascript">  
     delayURL();    
@@ -20,7 +20,26 @@
     } 
 </script> -->
 
-    
+<!-- 已运行时间显示 -->
+<script type="text/javascript">
+    function show_runtime() {
+        window.setTimeout("show_runtime()", 1000);
+        X = new Date("02/15/2022 07:38:15");
+        Y = new Date(); 
+        T = (Y.getTime() - X.getTime()); 
+        M = 24 * 60 * 60 * 1000;
+        a = T / M;
+        A = Math.floor(a);
+        b = (a - A) * 24; 
+        B = Math.floor(b);
+        c = (b - B) * 60; 
+        C = Math.floor((b - B) * 60);
+        D = Math.floor((c - C) * 60);
+        runtime_span.innerHTML = "本站勉强运行: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+    }
+    show_runtime();
+</script>
+
 
     <script>//禁止右键
         function click(e) {
@@ -92,7 +111,8 @@
 
 
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes" />
     <title>jixiang的视频解析</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
@@ -100,7 +120,6 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://github.com/mawenshui/mawenshui.GitHub.io/blob/284ed98164bd5dab5ee7edf948f65c81fb4d059c/JS/RunTime.js"></script>
     <script type="text/javascript"> eval(function (p, a, c, k, e, d) {
             e = function (c) {
                 return (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
@@ -140,27 +159,28 @@
 
 
 <body>
-	
-<!-- 为网站添加满屏雪花下雪特效（接口版），添加到你网站的body标签内即可 -->
+
+    <!-- 为网站添加满屏雪花下雪特效（接口版），添加到你网站的body标签内即可 -->
     <script src='https://api.vvhan.com/api/snow'></script>
-    
+
     <div style="padding-top:0px;">
-    
+
         <div class="alert alert-info">
             <div>
                 <font size="20">jixiang的视频解析</font><br>
-                <font size="5" style="float: left;">一个人只能被他的情绪控制，那么他永远不会成功</font><br>
+                <font size="5">一个人只能被他的情绪控制，那么他永远不会成功</font><br>
                 <span id="runtime_span"></span>
             </div>
         </div>
-    
-    
+
+
         <div class="alert alert-info alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <font size="5">将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可<br></br>如遇无法播放，请切换线路并再次点击播放按钮<br></br></font>
+            <font size="5">将视频网站链接粘贴到视频地址输入框之后点击播放按钮即可</font><br>
+            <font size="5">如遇无法播放，请切换线路并再次点击播放按钮</font><br>
             <font size="5">本站所用接口均来源于网络，如有侵权请联系删除</font>
         </div>
-    
+
     </div>
 
 
@@ -199,13 +219,15 @@
                         <option rel="nofollow" value="https://2.08bk.com/?url=">小七解析接口</option>
                         <option rel="nofollow" value="https://okjx.cc/?url=">OK解析接口</option>
                         <option rel="nofollow" value="https://api.v6.chat/?url=">音萌解析接口</option>
-                        <option rel="nofollow" value="https://jx.908la.com/api/?key=b63hpZzgMlhu5gAoQe&url=">908解析接口</option>
+                        <option rel="nofollow" value="https://jx.908la.com/api/?key=b63hpZzgMlhu5gAoQe&url=">908解析接口
+                        </option>
 
                         <option rel="nofollow" value="https://jsap.attakids.com/?url=">数码小站接口①</option>
                         <option rel="nofollow" value="https://j.zz22x.com/jx/?url=">数码小站接口②</option>
                         <option rel="nofollow" value="http://www.ikukk.com/?url=">数码小站接口③</option>
 
-                        <option rel="nofollow" value="https://www.qianyicp.com/jiexi/index.php?url=">VIP全网视频智能（多端稳定）</option>
+                        <option rel="nofollow" value="https://www.qianyicp.com/jiexi/index.php?url=">VIP全网视频智能（多端稳定）
+                        </option>
                         <option rel="nofollow" value="https://jx.elwtc.com/vip/?url=">VIP全网视频智能（专属二线）</option>
                         <option rel="nofollow" value="https://api.yueliangjx.com/?url=">VIP全网视频（专属一线）</option>
                         <option rel="nofollow" value="https://api.yueliangjx.com/?url=">VIP全网视频（专属一线）</option>
@@ -214,16 +236,16 @@
                         <option rel="nofollow" value="https://okjx.cc/?url=">优酷线(手机端勿选)</option>
                         <option rel="nofollow" value="https://api.jiexi.la/?url=">芒果线(电脑端较快)</option>
                         <option rel="nofollow" value="https://z1.m1907.cn/?jx=">乐视线</option>
-                        
+
                         <option rel="nofollow" value="http://vip.26db.cn/play/?v=">cd解析——①号</option>
-	                <option rel="nofollow" value="http://vip.26db.cn/b/?url=">cd解析——②号</option>
-	                <option rel="nofollow" value="http://vip.26db.cn/d/?url=">cd解析——③号</option>
+                        <option rel="nofollow" value="http://vip.26db.cn/b/?url=">cd解析——②号</option>
+                        <option rel="nofollow" value="http://vip.26db.cn/d/?url=">cd解析——③号</option>
                         <option rel="nofollow" value="http://vip.26db.cn/c/?url=">cd解析——④号</option>
                         <option rel="nofollow" value="http://vip.26db.cn/g/?url=">cd解析——⑤号</option>
                         <option rel="nofollow" value="http://vip.26db.cn/f/?url=">cd解析——⑥号</option>
-                        <option rel="nofollow" value="http://vip.26db.cn/a/?url=">cd解析——⑦号</option>	  
+                        <option rel="nofollow" value="http://vip.26db.cn/a/?url=">cd解析——⑦号</option>
                         <option rel="nofollow" value="https://17kyun.com/jx.php?url=">cd解析——⑧号</option>
-                                                                                                                 
+
 
                     </select>
                 </div>
